@@ -18,8 +18,10 @@ script:
   - ls -l 
   - docker --version # print the version for logging
   - docker build -f ./udagram-api-feed/Dockerfile -t udagram-api-feed ./udagram-api-feed
+  - docker images
   - docker tag udagram-api-feed fr77/udagram-api-feed:latest
   - docker build -f ./udagram-api-user/Dockerfile -t udagram-api-feed ./udagram-api-user
+  - docker images
   - docker tag udagram-api-user fr77/udagram-api-user:latest
 
 after_success:
