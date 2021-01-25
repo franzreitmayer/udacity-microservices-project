@@ -26,8 +26,13 @@ script:
   - docker build -f ./udagram-api-user/Dockerfile -t udagram-api-user ./udagram-api-user
   - docker images
   - docker tag udagram-api-user fr77/udagram-api-user:latest
+  - docker build -f ./udagram-frontend/Dockerfile -t udagram-frontend ./udagram-frontend
+  - docker images
+  - docker tag udagram-frontend fr77/udagram-frontend:latest
+
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push fr77/udagram-api-feed
   - docker push fr77/udagram-api-user
+  - docker push fr77/udagram-frontend
