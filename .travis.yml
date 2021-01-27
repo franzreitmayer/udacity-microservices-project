@@ -29,6 +29,9 @@ script:
   - docker build -f ./udagram-frontend/Dockerfile -t udagram-frontend ./udagram-frontend
   - docker images
   - docker tag udagram-frontend fr77/udagram-frontend:latest
+  - docker build -f ./udagram-reverse-proxy/Dockerfile -t udagram-reverse-proxy ./udagram-reverse-proxy
+  - docker images
+  - docker tag udagram-reverse-proxy fr77/udagram-reverse-proxy:latest
 
 
 after_success:
@@ -36,3 +39,4 @@ after_success:
   - docker push fr77/udagram-api-feed
   - docker push fr77/udagram-api-user
   - docker push fr77/udagram-frontend
+  - docker push fr77/udagram-reverse-proxy
