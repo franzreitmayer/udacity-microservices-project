@@ -12,7 +12,7 @@ spec:
     protocol: TCP
     targetPort: 8100
   selector:
-    app: udagram-api-feed
+    app: udagram-frontend
   sessionAffinity: None
   type: ClusterIP
 status:
