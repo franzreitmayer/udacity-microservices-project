@@ -20,6 +20,7 @@ script:
   - pwd
   - ls -l 
   - docker --version # print the version for logging
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -f ./udagram-api-feed/Dockerfile -t udagram-api-feed ./udagram-api-feed
   - docker images
   - docker tag udagram-api-feed fr77/udagram-api-feed:latest
