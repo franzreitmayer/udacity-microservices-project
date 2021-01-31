@@ -8,9 +8,10 @@ metadata:
   selfLink: /api/v1/namespaces/default/services/udagram-api-feed
 spec:
   ports:
-  - port: 8082
+  - name: "8080"
+    port: 8080
     protocol: TCP
-    targetPort: 8082
+    targetPort: 8080
   selector:
     app: udagram-api-user
   sessionAffinity: None
