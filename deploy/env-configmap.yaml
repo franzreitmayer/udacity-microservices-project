@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  AWS_BUCKET: aws-bucket
+  AWS_PROFILE: aws_profile
+  AWS_REGION: aws_region
+  JWT_SECRET: hallowelt
+  POSTGRES_DB: postgress_database_name
+  POSTGRES_HOST: postgres_database_host
+  URL: http://localhost:8100  
+metadata:
+  name: env-config
+  
+# you will replace URL with the URL of the frontend once you deploy it to AWS.
